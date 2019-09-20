@@ -3,8 +3,8 @@ import os
  
 def upload_files(path):
     session = boto3.Session(
-        aws_access_key_id='AKIAIMETMMXKSQMDHGIQ',
-        aws_secret_access_key='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'
+        aws_access_key_id='KEY',
+        aws_secret_access_key='KEY'
     )
     s3 = session.resource('s3')
     bucket = s3.Bucket('argo-mta')
@@ -18,4 +18,4 @@ def upload_files(path):
                 bucket.put_object(Key=full_path[len(path)+1:], Body=data)
  
 if __name__ == "__main__":
-    upload_files('/Users/amber/Documents/MTA_ARGO')
+    upload_files('PATH-to-files')
